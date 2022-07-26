@@ -1,0 +1,27 @@
+{
+  "name": "concurrent-promise-all",
+  "version": "1.0.1",
+  "description": "Resolve several promises using concurrency limit and failfast.",
+  "main": "index.js",
+  "exports": "./index.js",
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "types": "./index.d.ts",
+  "repository": "https://github.com/Jaouan/concurrent-promise-all",
+  "author": "Jaouan",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+  },
+  "keywords": [
+    "promise",
+    "ratelimit",
+    "pressure",
+    "failfast",
+    "concurrency",
+    "queue"
+  ]
+}
