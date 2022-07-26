@@ -23,7 +23,7 @@ const result = await concurrentPromiseAllSettled(
 );
 console.log(result);
 ```
-```json
+```js
 [
   { status: 'fulfilled', value: { /* axios response */ } },
   { status: 'fulfilled', value: { /* axios response */ } },
@@ -43,7 +43,7 @@ concurrentPromiseAllSettled(
   { maxConcurrent: 2 }
 )
 ```
-```json
+```js
 [
   { status: 'fulfilled', value: { /* axios response */ } },
   { status: 'fulfilled', value: { /* axios response */ } },
@@ -68,7 +68,7 @@ concurrentPromiseAllSettled(
   { maxConcurrent: 3 }
 )
 ```
-```json
+```js
 [
   { status: 'rejected', reason: { /* error */ } },
   { status: 'rejected', reason: { /* error */ } },
@@ -95,7 +95,7 @@ concurrentPromiseAllSettled(
   { maxConcurrent: 2 }
 ).then(console.log, console.error);
 ```
-```json
+```js
 [
   { status: 'rejected', reason: { /* error */ } },
   { status: 'rejected', reason: { /* error */ } },
