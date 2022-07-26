@@ -1,6 +1,6 @@
 {
   "name": "concurrent-promise-all",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Resolve several promises using concurrency limit and failfast.",
   "main": "index.js",
   "exports": "./index.js",

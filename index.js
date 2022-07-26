@@ -1,6 +1,11 @@
 const failStrategies = {
   failFast: (results, queue) => {
-    results.push(...queue.map((promise) => ({ status: "skipped", promise })));
+    results.push(
+      ...queue.map((promiseFunction) => ({
+        status: "skipped",
+        promiseFunction,
+      }))
+    );
     queue.length = 0;
   },
   failSlow: () => {},
