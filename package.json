@@ -1,6 +1,6 @@
 {
   "name": "concurrent-promise-all",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Resolve several promises using concurrency limit and failfast.",
   "main": "index.js",
   "exports": "./index.js",
@@ -8,6 +8,9 @@
     "index.js",
     "index.d.ts"
   ],
+  "scripts": {
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+  },
   "types": "./index.d.ts",
   "repository": "https://github.com/Jaouan/concurrent-promise-all",
   "author": "Jaouan",
@@ -18,10 +21,18 @@
   },
   "keywords": [
     "promise",
+    "promise-all",
+    "settled",
+    "concurrent",
+    "pressure",
+    "throttling",
     "ratelimit",
     "pressure",
     "failfast",
     "concurrency",
     "queue"
-  ]
+  ],
+  "devDependencies": {
+    "jest": "^28.1.3"
+  }
 }

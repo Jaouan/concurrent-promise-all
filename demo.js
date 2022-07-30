@@ -1,4 +1,13 @@
-import { concurrentPromiseAllSettled } from "./index.js";
+import { concurrentPromiseAll, concurrentPromiseAllSettled } from "./index.js";
+
+concurrentPromiseAll([Promise.resolve("foo"), "bar", true, null]).then(
+  console.log,
+  console.error
+);
+concurrentPromiseAll([Promise.reject("oops"), "bar", true, null]).then(
+  console.log,
+  console.error
+);
 
 const timeoutResolve = (message) => () =>
   new Promise(function (resolve, reject) {

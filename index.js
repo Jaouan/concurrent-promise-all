@@ -57,10 +57,24 @@ const queuedPromiseAllSettled = (promisesFn, maxConcurrent, failStrategy) =>
 
 export const concurrentPromiseAllSettled = (
   promises = [],
-  { maxConcurrent = 1, failFast = false }
+  options = { maxConcurrent: 1, failFast: false }
 ) =>
   queuedPromiseAllSettled(
     promises.map(ensureFunction),
-    maxConcurrent,
-    failFast ? failStrategies.failFast : failStrategies.failSlow
+    options.maxConcurrent || 1,
+    options.failFast ? failStrategies.failFast : failStrategies.failSlow
   );
+
+export const concurrentPromiseAll = (promises, options) =>
+  new Promise(async (resolve, reject) => {
+    const promisesResults = await concurrentPromiseAllSettled(
+      promises,
+      options || {}
+    );
+    const rejectedPromises = promisesResults.filter(
+      (promise) => promise.status === "rejected"
+    );
+    rejectedPromises.length
+      ? reject(rejectedPromises.map((promise) => promise.reason))
+      : resolve(promisesResults.map((promise) => promise.value));
+  });
